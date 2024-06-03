@@ -1,0 +1,28 @@
+ 
+        .the_number_of_increase {
+            width: 50%;
+            height: 100%;
+            float: left;
+            
+        }
+        
+        .the_number_of_decrease {
+            width: 50%;
+            height: 100%;
+            float: left;
+        }
+        #button1 {
+            width: 50%;
+            height: 100%;
+            float: left;
+        }
+        #button2 {
+            width: 50%;
+            height: 100%;
+            float: left;
+        }
+        #line7 {
+            width: 100%;
+            height: 12%;
+            margin-top: -5%;
+        }

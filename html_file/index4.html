@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Zegva - Responsive Admin & Dashboard Template | Themesdesign</title>
+    <meta content="Responsive admin theme build on top of Bootstrap 4" name="description">
+
+    <link href="../static/css/bootstrap-datepicker.min.css" rel="stylesheet">
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="../static/css/morris.css">
+
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/metismenu.min.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <script type="text/javascript" src="../static/js/echarts.min.js"></script>
+
+    <script src="../static/js/000004_show_data1.js"></script>
+    <script src="../static/js/000004_show_data2.js"></script>
+    <script>
+        var k = 0; //列表指针
+        var fr = '';
+        var pr = '';
+        if(forecast_result_list[k] == 1){
+            fr = '涨';
+        }
+        else{
+            fr = '跌';
+        }
+        if(physical_list[k] == 1){
+            pr = '涨';
+        }
+        else{
+            pr = '跌';
+        }
+    </script>
+    <script>
+        function tomorrow(){
+            k += 1;
+            if(k == n){
+                k--;
+            }
+            if(forecast_result_list[k] == -1){
+                document.getElementById("show_div").style.display = "none";
+                document.getElementById("sign_text").style.display = "block";
+                document.getElementById('date_data_h4').innerHTML = date_list[k];
+            }
+            else{
+                document.getElementById("show_div").style.display = "block";
+                document.getElementById("sign_text").style.display = "none";
+                if(forecast_result_list[k] == 1){
+                    fr = '涨';
+                }
+                else{
+                    fr = '跌';
+                }
+                if(physical_list[k] == 1){
+                    pr = '涨';
+                }
+                else{
+                    pr = '跌';
+                }
+                change();
+            }
+        }
+        function yesterday(){
+            k -= 1;
+            if(k == -1){
+                k++;
+            }
+            if(forecast_result_list[k] == -1){
+                document.getElementById("show_div").style.display = "none";
+                document.getElementById("sign_text").style.display = "block";
+                document.getElementById('date_data_h4').innerHTML = date_list[k];
+            }
+            else{
+                document.getElementById("show_div").style.display = "block";
+                document.getElementById("sign_text").style.display = "none";
+                if(forecast_result_list[k] == 1){
+                    fr = '涨';
+                }
+                else{
+                    fr = '跌';
+                }
+                if(physical_list[k] == 1){
+                    pr = '涨';
+                }
+                else{
+                    pr = '跌';
+                }
+                change();
+            }
+        }
+        function change(){
+            document.getElementById('forecast_accuracy_data_h4').innerHTML = Math.round(accuracy_list[k]*100*100)/100+'%';
+            document.getElementById('forecast_result_data_h4').innerHTML = fr;
+            document.getElementById('forecast_result_sum_data_h4').innerHTML = result_sum_list[k]+'个';
+            document.getElementById('the_number_of_increase_data_h4').innerHTML = result_increase[k]+'个';
+            document.getElementById('the_number_of_decrease_data_h4').innerHTML = (result_sum_list[k]- result_increase[k])+'个';
+            document.getElementById('physical_truth_data_h4').innerHTML = pr;
+            document.getElementById('date_data_h4').innerHTML = date_list[k];
+        }
+    </script>
+</head>
+
+<body>
+    
+    <div class="header-bg">
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <div class="topbar-main">
+                <div class="container-fluid">
+
+                    <!-- Logo-->
+                    <div>
+                        <a href="" class="logo">
+                            <img src="../static/picture/logo-dark.png" class="logo-lg" alt="" height="22">
+                        </a>
+                    </div>
+                    <!-- End Logo-->
+
+                    <div class="menu-extras topbar-custom navbar p-0">
+                       
+
+                        <ul class="navbar-right ml-auto list-inline float-right mb-0">
+
+                            <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
+                                <a class="nav-link waves-effect" href="#" id="btn-fullscreen">
+                                    <i class="fas fa-expand noti-icon"></i>
+                                </a>
+                            </li>
+                            <li class="menu-item dropdown notification-list list-inline-item">
+                                <!-- Mobile menu toggle-->
+                                <a class="navbar-toggle nav-link">
+                                    <div class="lines">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </a>
+                                <!-- End mobile menu toggle-->
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <!-- end menu-extras -->
+
+                    <div class="clearfix"></div>
+
+                </div>
+                <!-- end container -->
+            </div>
+            <!-- end topbar-main -->
+
+            <!-- start content -->
+         
+            <!-- end content -->
+
+               <!-- MENU Start -->
+               <div class="navbar-custom">
+                <div class="container-fluid">
+
+                    <div id="navigation">
+
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+
+                            <li class="has-submenu">
+                                <a href=""><i ></i> 股票1</a>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="index2.html"><i ></i>股票2</a>
+                              
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="index3.html"><i ></i>股票3</a>
+                                
+                            </li>
+
+                        
+                        </ul>
+                        <!-- End navigation menu -->
+                    </div>
+                    <!-- end #navigation -->
+                </div>
+                <!-- end container -->
+            </div>
+        </header>
+        <!-- End Navigation Bar-->
+
+    </div>
+    <!-- header-bg -->
+
+    <div class="wrapper">
+        <div class="container-fluid">
+                <div class="row">
+                <div class="col-xl-8">
+                    <div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="morris-bar-stacked" style="height: 390px;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <div class="card messages">
+                            <div class="card-body">
+                                <h4 class="mt-0 header-title mb-4">技术指标</h4>
+                                <nav>
+                                    <div class="nav nav-tabs messages-tabs tab-wid nav-justified" role="tablist">
+                                        <a class="nav-item nav-link active" id="nav-first-tab" data-toggle="tab" href="#nav-first" role="tab" aria-controls="nav-first" aria-selected="true">
+                                            <h5 class="mt-0 date">MACD</h5>
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-second-tab" data-toggle="tab" href="#nav-second" role="tab" aria-controls="nav-second" aria-selected="false">
+                                            <h5 class="mt-0 date">RSI</h5>
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-third-tab" data-toggle="tab" href="#nav-third" role="tab" aria-controls="nav-third" aria-selected="false">
+                                            <h5 class="mt-0 date">KDJ</h5>
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-four-tab" data-toggle="tab" href="#nav-four" role="tab" aria-controls="nav-four" aria-selected="false">
+                                            <h5 class="mt-0 date">VR</h5>
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-five-tab" data-toggle="tab" href="#nav-five" role="tab" aria-controls="nav-five" aria-selected="false">
+                                            <h5 class="mt-0 date">OBV</h5>
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-six-tab" data-toggle="tab" href="#nav-six" role="tab" aria-controls="nav-six" aria-selected="false">
+                                            <h5 class="mt-0 date">BRAR</h5>
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-seven-tab" data-toggle="tab" href="#nav-seven" role="tab" aria-controls="nav-seven" aria-selected="false">
+                                            <h5 class="mt-0 date">CCI</h5>
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-eight-tab" data-toggle="tab" href="#nav-eight" role="tab" aria-controls="nav-eight" aria-selected="false">
+                                            <h5 class="mt-0 date">PSY</h5>
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-nine-tab" data-toggle="tab" href="#nav-nine" role="tab" aria-controls="nav-nine" aria-selected="false">
+                                            <h5 class="mt-0 date">BOLL</h5>
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-ten-tab" data-toggle="tab" href="#nav-ten" role="tab" aria-controls="nav-ten" aria-selected="false">
+                                            <h5 class="mt-0 date">DMA</h5>
+                                        </a>
+                                        
+                                        
+                                    </div>
+                                </nav>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="nav-first" role="tabpanel" aria-labelledby="nav-first-tab">
+                                        <div class="p-2 mt-2">
+                                            
+                                            <div id="morris-MACD-example" class="morris-charts morris-chart-height" style="height: 350px;">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-second" role="tabpanel" aria-labelledby="nav-second-tab">
+                                        <div class="p-2 mt-2">
+                                            <div id="morris-RSI-example" class="morris-charts morris-chart-height" style="height: 350px;">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-third" role="tabpanel" aria-labelledby="nav-third-tab">
+                                        <div class="p-2 mt-2">
+                                            
+                                            <div id="morris-KDJ-example" class="morris-charts morris-chart-height" style="height: 350px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-four" role="tabpanel" aria-labelledby="nav-four-tab">
+                                        <div class="p-2 mt-2">
+                                            
+                                            <div id="morris-VR-example" class="morris-charts morris-chart-height" style="height: 350px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-five" role="tabpanel" aria-labelledby="nav-five-tab">
+                                        <div class="p-2 mt-2">
+                                           
+                                        <div id="morris-OBV-example" class="morris-charts morris-chart-height" style="height: 350px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-six" role="tabpanel" aria-labelledby="nav-six-tab">
+                                        <div class="p-2 mt-2">
+                                            
+                                            <div id="morris-BRAR-example" class="morris-charts morris-chart-height" style="height: 350px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-seven" role="tabpanel" aria-labelledby="nav-seven-tab">
+                                        <div class="p-2 mt-2">
+                                            
+                                            <div id="morris-CCI-example" class="morris-charts morris-chart-height" style="height: 350px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-eight" role="tabpanel" aria-labelledby="nav-eight-tab">
+                                        <div class="p-2 mt-2">
+                                            
+                                            <div id="morris-PSY-example" class="morris-charts morris-chart-height" style="height: 350px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-nine" role="tabpanel" aria-labelledby="nav-nine-tab">
+                                        <div class="p-2 mt-2">
+                                            
+                                            <div id="morris-BOLL-example" class="morris-charts morris-chart-height" style="height: 350px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-ten" role="tabpanel" aria-labelledby="nav-ten-tab">
+                                        <div class="p-2 mt-2">
+                                            
+                                            <div id="morris-DMA-example" class="morris-charts morris-chart-height" style="height: 350px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    
+                                    var charts = [];
+                                    var chart1 = echarts.init(document.getElementById("morris-MACD-example"));
+                                    var chart2 = echarts.init(document.getElementById("morris-RSI-example"));
+                                    var chart3 = echarts.init(document.getElementById("morris-KDJ-example"));
+                                    var chart4 = echarts.init(document.getElementById("morris-VR-example"));
+                                    var chart5 = echarts.init(document.getElementById("morris-OBV-example"));
+                                    var chart6 = echarts.init(document.getElementById("morris-BRAR-example"));
+                                    var chart7 = echarts.init(document.getElementById("morris-CCI-example"));
+                                    var chart8 = echarts.init(document.getElementById("morris-PSY-example"));
+                                    var chart9 = echarts.init(document.getElementById("morris-BOLL-example"));
+                                    var chart10 = echarts.init(document.getElementById("morris-DMA-example"));
+                                    var stockCode = {{ stockCode | safe}}
+                                    var dataList = {{ dataList | safe}}
+                                    var dateList = {{ dateList | safe}} 
+                                    var macdOption = {
+                                        title: {
+                                            text: "MACD",
+                                            x: "center"
+                                        },
+                                        tooltip: {
+                                            trigger: "axis"
+                                        },
+                                        legend: {
+                                            data: ['DIF', 'DEA'],
+                                            x: 'right',
+                                            y: 15
+                                        },
+                                        dataZoom: [
+                                            {
+                                                show: true,
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            },
+                                            {
+                                                type: 'inside',
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            }
+                                        ],
+                                        xAxis: {
+                                            type: 'category',
+                                            boundaryGap: false,
+                                            axisLine: { onZero: true },
+                                            data: dateList
+                                        },
+                                        yAxis: {
+                                            name: '',
+                                            type: 'value',
+                                        },
+                                        series: [
+                                            {
+                                                name: 'DIF',
+                                                type: 'line',
+                                                data: dataList['MACD'][0]
+                                            },
+                                            {
+                                                name: 'DEA',
+                                                type: 'line',
+                                                data: dataList['MACD'][1]
+                                            },
+                                        ]
+                                    };
+                                    var rsiOption = {
+                                        title: {
+                                            text: "RSI",
+                                            x: "center"
+                                        },
+                                        tooltip: {
+                                            trigger: "axis"
+                                        },
+                                        legend: {
+                                            data: ['RSI'],
+                                            x: 'right',
+                                            y: 15
+                                        },
+                                        dataZoom: [
+                                            {
+                                                show: true,
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            },
+                                            {
+                                                type: 'inside',
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            }
+                                        ],
+                                        xAxis: {
+                                            type: 'category',
+                                            boundaryGap: false,
+                                            axisLine: { onZero: true },
+                                            data: dateList
+                                        },
+                                        yAxis: {
+                                            name: '',
+                                            type: 'value',
+                                        },
+                                        series: [
+                                            {
+                                                name: 'RSI',
+                                                type: 'line',
+                                                data: dataList['RSI'][0]
+                                            },
+                                        ]
+                                    };
+                                    var kdjOption = {
+                                        title: {
+                                            text: "KDJ",
+                                            x: "center"
+                                        },
+                                        tooltip: {
+                                            trigger: "axis"
+                                        },
+                                        legend: {
+                                            data: ['K', 'D', 'J'],
+                                            x: 'right',
+                                            y: 15
+                                        },
+                                        dataZoom: [
+                                            {
+                                                show: true,
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            },
+                                            {
+                                                type: 'inside',
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            }
+                                        ],
+                                        xAxis: {
+                                            type: 'category',
+                                            boundaryGap: false,
+                                            axisLine: { onZero: true },
+                                            data: dateList
+                                        },
+                                        yAxis: {
+                                            name: '',
+                                            type: 'value',
+                                        },
+                                        series: [
+                                            {
+                                                name: 'K',
+                                                type: 'line',
+                                                color: 'darkred',
+                                                data: dataList['KDJ'][0],
+                                            },
+                                            {
+                                                name: 'D',
+                                                type: 'line',
+                                                color: 'green',
+                                                data: dataList['KDJ'][1]
+                                            },
+                                            {
+                                                name: 'J',
+                                                type: 'line',
+                                                color: 'darkblue',
+                                                data: dataList['KDJ'][2]
+                                            }
+                                        ]
+                                    };
+                                    var bollOption = {
+                                        title: {
+                                            text: "BOLL",
+                                            x: "center"
+                                        },
+                                        tooltip: {
+                                            trigger: "axis"
+                                        },
+                                        legend: {
+                                            data: ['SMA', '阻力线', '支撑线'],
+                                            x: 'right',
+                                            y: 15
+                                        },
+                                        dataZoom: [
+                                            {
+                                                show: true,
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            },
+                                            {
+                                                type: 'inside',
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            }
+                                        ],
+                                        xAxis: {
+                                            type: 'category',
+                                            boundaryGap: false,
+                                            axisLine: { onZero: true },
+                                            data: dateList
+                                        },
+                                        yAxis: {
+                                            name: '',
+                                            type: 'value',
+                                        },
+                                        series: [
+                                            {
+                                                name: 'SMA',
+                                                type: 'line',
+                                                color: 'darkblue',
+                                                data: dataList['BOLL'][0],
+                                            },
+                                            {
+                                                name: '阻力线',
+                                                type: 'line',
+                                                color: 'darkred',
+                                                data: dataList['BOLL'][1]
+                                            },
+                                            {
+                                                name: '支撑线',
+                                                type: 'line',
+                                                color: 'green',
+                                                data: dataList['BOLL'][2]
+                                            }
+                                        ]
+                                    };
+                                    var dmaOption = {
+                                        title: {
+                                            text: "DMA",
+                                            x: "center"
+                                        },
+                                        tooltip: {
+                                            trigger: "axis"
+                                        },
+                                        legend: {
+                                            data: ['DMA', 'AMA'],
+                                            x: 'right',
+                                            y: 15
+                                        },
+                                        dataZoom: [
+                                            {
+                                                show: true,
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            },
+                                            {
+                                                type: 'inside',
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            }
+                                        ],
+                                        xAxis: {
+                                            type: 'category',
+                                            boundaryGap: false,
+                                            axisLine: { onZero: true },
+                                            data: dateList
+                                        },
+                                        yAxis: {
+                                            name: '',
+                                            type: 'value',
+                                        },
+                                        series: [
+                                            {
+                                                name: 'DMA',
+                                                type: 'line',
+                                                color: 'darkblue',
+                                                data: dataList['DMA'][0],
+                                            },
+                                            {
+                                                name: 'AMA',
+                                                type: 'line',
+                                                color: 'darkred',
+                                                data: dataList['DMA'][1]
+                                            },
+                                        ]
+                                    };
+                                    var brarOption = {
+                                        title: {
+                                            text: "BRAR",
+                                            x: "center"
+                                        },
+                                        tooltip: {
+                                            trigger: "axis"
+                                        },
+                                        legend: {
+                                            data: ['AR', 'BR'],
+                                            x: 'right',
+                                            y: 15
+                                        },
+                                        dataZoom: [
+                                            {
+                                                show: true,
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            },
+                                            {
+                                                type: 'inside',
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            }
+                                        ],
+                                        xAxis: {
+                                            type: 'category',
+                                            boundaryGap: false,
+                                            axisLine: { onZero: true },
+                                            data: dateList
+                                        },
+                                        yAxis: {
+                                            name: '',
+                                            type: 'value',
+                                        },
+                                        series: [
+                                            {
+                                                name: 'AR',
+                                                type: 'line',
+                                                color: 'darkblue',
+                                                data: dataList['BRAR'][0],
+                                            },
+                                            {
+                                                name: 'BR',
+                                                type: 'line',
+                                                color: 'darkred',
+                                                data: dataList['BRAR'][1],
+                                            },
+                                        ]
+                                    };
+                                    var cciOption = {
+                                        title: {
+                                            text: "CCI",
+                                            x: "center"
+                                        },
+                                        tooltip: {
+                                            trigger: "axis"
+                                        },
+                                        legend: {
+                                            data: ['CCI'],
+                                            x: 'right',
+                                            y: 15
+                                        },
+                                        dataZoom: [
+                                            {
+                                                show: true,
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            },
+                                            {
+                                                type: 'inside',
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            }
+                                        ],
+                                        xAxis: {
+                                            type: 'category',
+                                            boundaryGap: false,
+                                            axisLine: { onZero: true },
+                                            data: dateList
+                                        },
+                                        yAxis: {
+                                            name: '',
+                                            type: 'value',
+                                        },
+                                        series: [
+                                            {
+                                                name: 'CCI',
+                                                type: 'line',
+                                                color: 'darkblue',
+                                                data: dataList['CCI'][0],
+                                            },
+                                        ]
+                                    };
+                                    var obvOption = {
+                                        title: {
+                                            text: "OBV",
+                                            x: "center"
+                                        },
+                                        tooltip: {
+                                            trigger: "axis"
+                                        },
+                                        legend: {
+                                            data: ['OBV'],
+                                            x: 'right',
+                                            y: 15
+                                        },
+                                        dataZoom: [
+                                            {
+                                                show: true,
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            },
+                                            {
+                                                type: 'inside',
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            }
+                                        ],
+                                        xAxis: {
+                                            type: 'category',
+                                            boundaryGap: false,
+                                            axisLine: { onZero: true },
+                                            data: dateList
+                                        },
+                                        yAxis: {
+                                            name: '',
+                                            type: 'value',
+                                        },
+                                        series: [
+                                            {
+                                                name: 'OBV',
+                                                type: 'line',
+                                                color: 'darkblue',
+                                                data: dataList['OBV'][0],
+                                            },
+                                        ]
+                                    };
+                                    var psyOption = {
+                                        title: {
+                                            text: "PSY",
+                                            x: "center"
+                                        },
+                                        tooltip: {
+                                            trigger: "axis"
+                                        },
+                                        legend: {
+                                            data: ['PSY'],
+                                            x: 'right',
+                                            y: 15
+                                        },
+                                        dataZoom: [
+                                            {
+                                                show: true,
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            },
+                                            {
+                                                type: 'inside',
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            }
+                                        ],
+                                        xAxis: {
+                                            type: 'category',
+                                            boundaryGap: false,
+                                            axisLine: { onZero: true },
+                                            data: dateList
+                                        },
+                                        yAxis: {
+                                            name: '',
+                                            type: 'value',
+                                        },
+                                        series: [
+                                            {
+                                                name: 'PSY',
+                                                type: 'line',
+                                                color: 'darkblue',
+                                                data: dataList['PSY'][0],
+                                            },
+                                        ]
+                                    };
+                                    var vrOption = {
+                                        title: {
+                                            text: "VR",
+                                            x: "center"
+                                        },
+                                        tooltip: {
+                                            trigger: "axis"
+                                        },
+                                        legend: {
+                                            data: ['VR'],
+                                            x: 'right',
+                                            y: 15
+                                        },
+                                        dataZoom: [
+                                            {
+                                                show: true,
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            },
+                                            {
+                                                type: 'inside',
+                                                realtime: true,
+                                                start: 30,
+                                                end: 70,
+                                                xAxisIndex: [0]
+                                            }
+                                        ],
+                                        xAxis: {
+                                            type: 'category',
+                                            boundaryGap: false,
+                                            axisLine: { onZero: true },
+                                            data: dateList
+                                        },
+                                        yAxis: {
+                                            name: '',
+                                            type: 'value',
+                                        },
+                                        series: [
+                                            {
+                                                name: 'VR',
+                                                type: 'line',
+                                                color: 'darkblue',
+                                                data: dataList['VR'][0],
+                                            },
+                                        ]
+                                    };
+                                    chart1.setOption(macdOption);
+                                    chart2.setOption(rsiOption);
+                                    chart3.setOption(kdjOption);
+                                    chart4.setOption(vrOption);
+                                    chart5.setOption(obvOption);
+                                    chart6.setOption(brarOption);
+                                    chart7.setOption(cciOption);
+                                    chart8.setOption(psyOption);
+                                    chart9.setOption(bollOption);
+                                    chart10.setOption(dmaOption);
+                                    echarts.connect([chart1,chart2,chart3,chart4,chart5,chart6,chart7,chart8,chart9,chart10]);
+                                    charts.push(chart1);
+                                    charts.push(chart2);
+                                    charts.push(chart3);
+                                    charts.push(chart4);
+                                    charts.push(chart5);
+                                    charts.push(chart6);
+                                    charts.push(chart7);
+                                    charts.push(chart8);
+                                    charts.push(chart9);
+                                    charts.push(chart10);
+                                    $(window).resize(function() {
+                                        for(var i = 0; i < charts.length; i++) {
+                                            charts[i].resize();
+                                        }
+                                    });
+                                    //解决tab切换不显示问题 在加载窗口后重新渲染。
+                                    $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+                                        for(var i = 0; i < charts.length; i++) {
+                                            charts[i].resize();
+                                        }
+                                    });
+                                </script>
+
+
+
+
+                                <!-- end tab-content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="col-xl-4">
+
+                    <div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mt-0 header-title mb-4">运行结果</h4>
+                                <ul class="list-inline widget-chart mt-4 mb-0 text-center">
+                                    <!--预测准确率和数值-->
+                                    <div>
+                                        <h1 id="sign_text">我们认为结果不可靠</h1>
+                                        <div id="show_div">
+                                            <li class="list-inline-item">
+                                            <div id="line1">
+                                                <div id="forecast_accuracy">
+                                                    <h4 class="font-16">准确率：</h4>
+                                                </div>
+                                                <div id="forecast_accuracy_data">
+                                                    <h4 id="forecast_accuracy_data_h4" class="text-info pt-1 mb-0">1</h4>
+                                                </div>
+                                            </div>
+                                            </li>
+                                        
+                                            <!--预测结果和数值-->
+                                            <li class="list-inline-item">
+                                            <div id="line2">
+                                                <div id="forecast_result">
+                                                    <h4 class="font-16">预测结果：</h4>
+                                                </div>
+                                                <div id="forecast_result_data">
+                                                    <h4 id="forecast_result_data_h4" class="text-info pt-1 mb-0">2</h4>
+                                                </div>
+                                            </div>
+                                            </li>
+                                            
+                                            <!--预测结果总数和数值-->
+                                            <li class="list-inline-item">
+                                            <div id="line3">
+                                                <div id="forecast_result_sum">
+                                                    <h4 class="font-14">预测结果总数：</h4>
+                                                </div>
+                                                <div id="forecast_result_sum_data">
+                                                    <h4 id="forecast_result_sum_data_h4" class="text-info pt-1 mb-0">3</h4>
+                                                </div>
+                                            </div>
+                                            </li>
+                                            
+                                            <!--预测涨和数值、预测跌和数值-->
+                                            <li class="list-inline-item">
+                                            <div id="line4">
+                                                <div class="the_number_of_increase">
+                                                <div id="the_number_of_increase">
+                                                    <h4 class="font-12"> 预测涨：</h4>
+                                                </div>
+                                                <div id="the_number_of_increase_data">
+                                                    <h4 id="the_number_of_increase_data_h4" class="font-12 pt-1 mb-0">4</h4>
+                                                </div>
+                                                </div>
+                                                <div class="the_number_of_increase">
+                                                <div id="the_number_of_decrease">
+                                                    <h4 class="font-12">预测跌：</h4>
+                                                </div>
+                                                <div id="the_number_of_decrease_data">
+                                                    <h4 id="the_number_of_decrease_data_h4" class="font-12 pt-1 mb-0 ">5</h5>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </li>
+                                            <!--实际情况和数值-->
+                                            <li class="list-inline-item">
+                                                <div id="line5">
+                                                    <div id="physical_truth">
+                                                        <h4 class="font-16">实际情况：</h4>
+                                                    </div>
+                                                    <div id="physical_truth_data">
+                                                        <h4 id="physical_truth_data_h4" class="text-info pt-1 mb-0">6</h4>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </div>    
+                                    </div>
+                                    <!--日期和数值-->
+                                    <div style="margin-top: 5%;">
+                                    <div id="line6">
+                                        <div id="date">
+                                        </div>
+                                        <div id="date_data">
+                                            <h4 id="date_data_h4" class="font-16 pt-1 mb-0">7</h4>
+                                        </div>
+                                    </div>
+                                    <div id="line7" class="line7">
+                                        <div id="button1" class="button1">
+                                            <input type="button" class="btn btn-primary btn-sm waves-effect waves-light" onclick='yesterday()' value="上一天">
+                                        </div>
+                                        <div id="button2" class="button2">
+                                            <input type="button" class="btn btn-primary btn-sm waves-effect waves-light" onclick="tomorrow()" value="下一天">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                </ul>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mt-0 header-title mb-4">详细数据</h4>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+        <!-- end container-fluid -->
+    </div>
+    <!-- end wrapper -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        Copyright &copy; 2022.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
+    </footer>
+
+    <!-- End Footer -->
+
+    <!--initialise-->
+    <script>
+        if(forecast_result_list[k] == -1){
+            document.getElementById("show_div").style.display = "none";
+            document.getElementById("sign_text").style.display = "block";
+        }
+        else{
+            document.getElementById("show_div").style.display = "block";
+            document.getElementById("sign_text").style.display = "none";
+            document.getElementById('forecast_accuracy_data_h4').innerHTML = accuracy_list[k]*100+'%';
+            document.getElementById('forecast_result_data_h4').innerHTML = fr;
+            document.getElementById('forecast_result_sum_data_h4').innerHTML = result_sum_list[k]+'个';
+            document.getElementById('the_number_of_increase_data_h4').innerHTML = result_increase[k]+'个';
+            document.getElementById('the_number_of_decrease_data_h4').innerHTML = (result_sum_list[k]- result_increase[k])+'个';
+            document.getElementById('physical_truth_data_h4').innerHTML = pr;
+        }      
+        document.getElementById('date_data_h4').innerHTML = date_list[k];
+    </script>
+    <!-- jQuery  -->
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/jquery.slimscroll.js"></script>
+    <script src="../static/js/waves.min.js"></script>
+
+    <!-- Plugins js -->
+    <script src="../static/js/apexcharts.min.js"></script>
+    <script src="../static/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="../static/js/echarts.min.js"></script>
+
+
+    <!--Morris Chart-->
+    
+    <script type="text/javascript" src="../static/js/000004_kline_data.js"></script>
+
+
+    <script type="text/javascript" src="../static/js/k-line.js"></script>
+    <!-- App js -->
+    <script src="../static/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Zegva - Responsive Admin & Dashboard Template | Themesdesign</title>
+    <meta content="Responsive admin theme build on top of Bootstrap 4" name="description">
+
+    <link href="static/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="static/css/metismenu.min.css" rel="stylesheet" type="text/css">
+    <link href="static/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="static/css/style.css" rel="stylesheet" type="text/css">
+    <script src="static/js/jquery-3.1.1.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-12">
+                    <!-- Left sidebar -->
+                    <div class="email-leftbar card">
+                        <h5 class="mt-0" style="color: #23cbe0;">技术指标详解</h5>
+                        <ul class="nav" id="tit" role="tablist" >
+                            <li class="nav-item" style="width: 100%;">
+                                <a class="nav-link active" data-toggle="tab" href="#1" role="tab">
+                                    <i class="ti-archive mr-2"></i> MACD
+                                </a>
+                            </li>
+                            <li class="nav-item" style="width: 100%;">
+                                <a class="nav-link" data-toggle="tab" href="#2" role="tab">
+                                    <i class="ti-location-arrow mr-2"></i> RSI
+                                </a>
+                            </li>
+                            <li class="nav-item" style="width: 100%;">
+                                <a class="nav-link" data-toggle="tab" href="#3" role="tab">
+                                   <i class="ti-star mr-2"></i>KDJ
+                                </a>
+                            </li>
+                            <li class="nav-item" style="width: 100%;">
+                                <a class="nav-link" data-toggle="tab" href="#4" role="tab">
+                                   <i class="ti-pencil  mr-2"></i> VR
+                                </a>
+                            </li>
+                            <li class="nav-item" style="width: 100%;">
+                                <a class="nav-link" data-toggle="tab" href="#5" role="tab">
+                                   <i class="ti-pencil-alt  mr-2"></i> OBV
+                                </a>
+                            </li>
+                            <li class="nav-item" style="width: 100%;">
+                                <a class="nav-link" data-toggle="tab" href="#6" role="tab">
+                                   <i class="ti-stats-up mr-2"></i> BRAR
+                                </a>
+                            </li>
+                            <li class="nav-item" style="width: 100%;">
+                                <a class="nav-link" data-toggle="tab" href="#7" role="tab">
+                                   <i class="ti-bar-chart-alt mr-2"></i> CCI
+                                </a>
+                            </li>
+                            <li class="nav-item" style="width: 100%;">
+                                <a class="nav-link" data-toggle="tab" href="#8" role="tab">
+                                   <i class="ti-agenda  mr-2"></i> PSY
+                                </a>
+                            </li>
+                            <li class="nav-item" style="width: 100%;">
+                                <a class="nav-link" data-toggle="tab" href="#9" role="tab">
+                                   <i class="ti-write  mr-2"></i> BOLL
+                                </a>
+                            </li>
+                            <li class="nav-item" style="width: 100%;">
+                                <a class="nav-link" data-toggle="tab" href="#10" role="tab">
+                                   <i class="ti-gallery  mr-2"></i> DMA
+                                </a>
+                            </li>
+                        </ul>
+                   <a href="home_page"><div class="btn btn-primary mb-2 mb-sm-0" style="width: 100%;">返回</div></a> 
+                </div>
+                    <!-- End Left sidebar -->
+
+                    <!-- Right Sidebar -->
+                    <div class="email-rightbar mb-3">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="tab-content" id="con">
+                                    <div class="tab-pane active p-3" id="1" role="tabpanel">
+                                        <h4>MACD</h4>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; MACD称为异同移动平均线，是从双指数移动平均线发展而来的，由快的指数移动平均线(EMA12)减去慢的指数移动平均线(EMA26)得到快线DIF，再用2×(快线DIF-DIF的9日加权移动均线DEA)得到MACD柱。MACD的意义和双移动平均线基本相同，即由快、慢均线的离散、聚合表征当前的多空状态和股价可能的发展变化趋势，但阅读起来更方便。MACD的变化代表着市场趋势的变化，不同K线级别的MACD代表当前级别周期中的买卖趋势。</p>
+                                        <h6>一、MACD用途</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; MACD指标主要是利用长短期两条平滑平均线，计算两者之间的差离值。该指标可以去除掉移动平均线经常出现的假讯号，又保留了移动平均线的优点。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 由于MACD指标对价格变动的灵敏度不高，属于中长线指标，所以在盘整行情中不适用。</p>
+                                        <h6>二、MACD使用方法</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> DIF与DEA均为正值时，大势属多头市场</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> DIF与DEA均为负值时，大势属空头市场</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> DIF向上突破DEA时，可买进</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> DIF向下突破DEA时，应卖出</p>
+                                        <h6>三、MACD指标的使用心得</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> DIF与DEA均为正值时，大势属多头市场</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> DIF与DEA均为负值时，大势属空头市场</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> DIF向上突破DEA时，可买进</p>
+                                        <h6>四、MACD指标的计算公式</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;MACD由正负差（DIF）和异同平均数（DEA）两部分组成，当然，正负差是核心，DEA是辅助。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i>DIF是快速平滑移动平均线与慢速平滑移动平均线的差，DIF的正负差的名称由此而来。快速和慢速的区别是进行指数平滑时采用的参数大小不同，快速是短期的，慢速是长的。以现在常用的参数12和26为例，对DIF的计算过程进行介绍。</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp;i.快速平滑移动线（EMA）是12日的，计算公式为：今日EMA(12) = 昨天的EMA(12)×11/13 + 今日收盘价×2/13</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp;ii.慢速平滑移动平均线(EMA)是26日的，计算公式为:今日EMA(26) = 昨日的EMA(26)×25/27 + 今日收盘价×2/27</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp;iii.DIF  =  EMA(12) - EMA(26)</p>
+                                        <p class="mx-4 my-0">有了DIF之后，MACD的核心就有了。单独的DIF也能进行行情预测，但为了使信号更可靠，我们引入了另一个指标DEA。</p>
+                                        <p class="mx-4 mt-3 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> DEA是DIF的移动平均，也就是连续数日的DIF的算数平均。这样，DEA自己又有了个参数，那就是作算数平均的DIF的个数，即天数。</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp;i.DEA的计算公式即为：DEA(MACD) = 前一日的DEA×8/10 + 今日DIF×2/10</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp;ii.对DIF做移动平均就像对收盘价作移动平均一样，是为了消除偶然因素的影响，使结论更可靠。</p>
+                                        <p class="mx-4 mt-3 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 此外，在分析软件上还有一个指标叫作柱状线(BAR)：BAR = 2×（DIF - DEA）</p>
+                                    </div>
+                                    <div class="tab-pane p-3" id="2" role="tabpanel">
+                                        <h4>RSI</h4>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; RSI是Relative Strength Index的缩写。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 相对强弱指标RSI是根据一定时期内上涨点数和下跌点数之和的比率制作出的一种技术曲线。能够反映出市场在一定时期内的景气程度。由威尔斯.威尔德(Welles Wilder)最早应用于期货买卖，后来人们发现在众多的图表技术分析中，强弱指标的理论和实践极其适合于股票市场的短线投资，于是被用于股票升跌的测量和分析中。该分析指标的设计是以三条线来反映价格走势的强弱，这种图形可以为投资者提供操作依据，非常适合做短线差价操作。</p>
+                                        <h6>一、RSI指标的用途</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; RSI指标是目前股市技术分析中比较常用的中短线指标</p>
+                                        <h6>二、RSI指标的原理</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; RSI的基本原理是在一个正常的股市中，多空买卖双方的力道必须得到均衡，股价才能稳定；</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 而RSI是对于固定期间内，股价上涨总复读平均值占总幅度平均值的比例</p>
+                                        <h6>三、RSI指标的使用方法</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> RSI值于0—100之间呈常态分配，当6日RSI值为80‰以上时，股市呈超买现象，若出现M头为卖出时机；当6日RSI值在20‰以下时，股市呈超买现象，若出现W头为买进时机。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> RSI一般选用6日、12日、24日作为参考基期，基期越长越有趋势性(慢速RSI)，基期越短越有敏感性，（快速RSI）。当快速RSI由下往上突破慢速RSI时，为买进时机；当快速RSI由上而下跌破慢速RSI时，为卖出时机。</p>
+                                        <h6>四、RSI指标的超买和超卖</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 一般而言，RSI的数值在80以上和20以下为超买超卖区的分界线。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 当RSI值超过80时，则表示整个市场力度过强，多方力量远大于空方力量，双方力量对比悬殊，多方大胜，市场处于超买状态，后续行情有可能出现回调或转势，此时，投资者可卖出股票。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 当RSI值低于20时，则表示市场卖盘多于买盘，空方力量强于多方力量，空方大举进攻后，市场下跌的幅度过大，已处于超卖状态，股价可能出现反弹或转势，投资者可适量建仓、买入股票。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 当RSI值处于50左右时，说明市场处于整理状态，投资者可观望。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 对于超买超卖区的界定，投资者应根据市场的具体情况而定。一般市道中，RSI数值在80以上就可以成为超买区，20以下就可以称为超卖区。但有时在特殊的涨跌行情中，RSI的超买超卖区的划分要视具体情况而定。比如，在牛市中或对于牛股，超买区可定为90以上，而在熊市中或对于熊股，超卖区可定为10以下（对于这点事相对于参数设置小的RSI而言的，如果参数设置大，则RSI很难到达90以上和10以下）。</p>
+                                    </div>
+                                    <div class="tab-pane p-3" id="3" role="tabpanel">
+                                        <h4>KDJ</h4>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; KDJ指标中文名叫随机指标，是一种相当新颖、实用的技术分析指标，它起先用于期货市场的分析，后被广泛用于股市的中短期趋势分析，是期货和股票市场上最常用的技术分析工具。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 随机指标KDJ一般是用于股票分析的统计体系，根据统计学原理，通过一个特定的周期(常为9日、9周等)内出现过的最高价、最低价及最后一个计算周期的收盘价及这三者之间的比例关系，来计算最后一个计算周期的未成熟随机值RSV，然后根据平滑移动平均线的方法来计算K值、D值与J值，并绘成曲线图来研判股票走势。</p>
+                                        <h6>一、KDJ指标的用途</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;KD是在WMS的基础上发展起来的，所以KD就有WMS的一些特性。在反映股市价格变化时，WMS最快，K其次，D最慢。在使用KD指标时，我们往往称K指标为快指标，D指标为慢指标。K指标反应敏捷，但容易出错，D指标反应稍慢，但稳重可靠。</p>
+                                        <h6>二、KDJ指标的使用方法</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 从KD的取值方面考虑，80以上为超买区，20以下为超卖区，KD超过80就应该考虑卖了，低于20就应该考虑买入了。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> KD指标的交叉方面考虑，K上穿D是金叉，为买入信号，金叉的位置应该比较低，是在超卖区的位置，越低越好。交叉的交数以2次为最少，越多越好。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> KD指标的背离方面考虑</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; i.当KD处在高位，并形成两个依次向下的峰，而此时股价还在一个劲地上涨，这叫顶背离，是卖出的信号。</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; ii.当KD处在低位，并形成一层比一层高，而股价还继续下跌，这构成底背离，是买入信号。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> J指标取值超过100和低于0，都属于价格的非正常区域，大于100位超买，小于0为超卖，并且，J值的讯号不会经常出现，一旦出现，则可靠度相当高</p>
+                                        
+                                        <h6>三、KDJ指标的使用心得</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 股价短期波动剧烈或者瞬间行情幅度太大时，使用KD值交叉讯号买卖，经常发生买在高点、卖在低点的窘境，此时须放弃使用KD水机指标，改用CCI、ROC/BOLLINGERBANDS…等指标。但是，如果波动的幅度够大，买卖之间扣除手续费仍有利润的话，此时将画面转变成五分钟或十五分钟图形，再以KD指标的交叉讯号买卖，还可以斩获一点利润。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 极强或者极弱的行情，会造成指标在超买或超卖区内上下徘徊，K值也会发行这种情形，应该参考VR、ROC指标，观察股价是否超出常态分布的范围，一旦确定为极度强弱的走势，则K值的超买卖功能将失去作用。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 以D值来代替K值，将可使超买超卖的功能更具效果，一般常态行情，D值大于80时，股价经常向下回跌；D值低于20时，股价容易向上回升。在极端行情中，D值大于90时，股价容易产生瞬间回档；D值低于15时，股价容易产生瞬间反弹。</p>
+                                        <h6>四、KDJ指标的计算公式</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 产生KD以前，先产生未成熟随机值RSV。其计算公式为：N日RSV  = ( C – Ln ) / ( Hn – Ln )* 100。其中C为当天的收盘价，Ln为之前n日内的最低价，Hn为之前n日内的最高价。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 对RSV进行指数平滑，就得到如下K值：今日K值 = 2/3 *昨日K值 + 1/3 * 今日RSV</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 对K值进行指数平滑，就得到如下D值：今日D值 = 2/3 * 昨日D值 + 1/3 * 今日K值</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i>d)在介绍KD时，往往还附带一个J指标，计算公式为：J = 3*D – 2*K。
+                                            可见J是D加上一个修正值。J的实质是反映D和D与K的差值。此外，有的书中J指标的计算公式为：J = 3*K-2*D</p>
+                                    
+                                    
+                                    
+                                    
+                                    </div>
+                                    <div class="tab-pane p-3" id="4" role="tabpanel">
+                                        <h4>VR</h4>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; VR(Volatility Volume Ratio)中文名称:成交量变异率,主要的作用在于以成交量的角度测量和观察股价的热度和比较，不同于AR、BR、CR的价格角度，但是却同样基于"反市场操作"的原理为出发点。和VR指标同性质的指标还有PVT、PVI、NVI、 A/DVOLUME……等。</p>
+                                        <h6>一、VR指标的用途</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 该指标主要的作用在于以成交量的角度测量股价的热度，表现股市的买卖气势以利于投资者掌握股价可能的趋势走向。该指标基于“反市场操作”的原理为出发点。</p>
+                                        <h6>二、VR指标的使用方法</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> VR的分布</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; i.低价区域：70-40  为可买进区域</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; ii.安全区域：150-80  正常分布区域</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; iii.获利区域：450-160  应考虑获利了结</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; iv.警戒区域：450以上  股价已过高</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 在低价区域中，VR值止跌回升，可买进</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 在VR>160时，股价上扬，VR值见顶，可卖出</p>
+                                        <h6>三、VR指标的使用心得</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> VR指标在低价区域准确度较高，当VR>160时有失真可能，特别是在350-400高档区，有时会发生将股票卖出后，股价仍然续涨的现象，此时可以配合PSY心理线指标化解疑难。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> VR低于40的形态，运用在个股走势上，常发生股价无法有效反弹的效应，随后VR只维持在40-60之间徘徊。因而，此种讯号较适宜应用在指数方面，并且配合ADR、OBOS…等指标使用效果非常好。</p>
+                                        <h6>四、VR指标的计算公式</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 24天以来凡是股价上涨的那一天的成交量都成为AV，将24天内的AV总和相加后称为AVS。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 24天以来凡是股价下跌的那一天的成交量都称为BV，将24天内的BV总和相加后称为BVS。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 24天以来凡是股价不涨不跌，则那一天的成交量都称为CV，将24天内的CV总和相加后称为CVS。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 24天开始计算：VR = (AVS + 0.5*CVS)/(BVS + 0.5*CVS)</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 计算例参数24天可以修改，但是周期不宜小于12，否则，采样天数不足容易造成偏差。</p>
+                                    </div>
+                                    <div class="tab-pane p-3" id="5" role="tabpanel">
+                                        <h4>OBV</h4>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; OBV 的英文全称是:On Balance Volume，是由美国的投资分析家Joe Granville所创。该指标通过统计成交量变动的趋势来推测股价趋势。OBV以"N"字型为波动单位，并且由许许多多"N"型波构成了OBV的曲线图，对一浪高于一浪的"N"型波，称其为"上升潮"(UP TIDE)，至于上升潮中的下跌回落则称为"跌潮"(DOWN FIELD)。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 能量潮是将成交量数量化，制成趋势线，配合股价趋势线，从价格的变动及成交量的增减关系，推测市场气氛。其主要理论基础是市场价格的变化必须有成交量的配合，股价的波动与成交量的扩大或萎缩有密切的关连。通常股价上升所需的成交量总是较大;下跌时，则成交量可能放大，也可能较小。价格升降而成交量不相应升降，则市场价格的变动难以为继。</p>
+                                        <h6>一、OBV指标的用途</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;OBV指标通过统计成交量变动的趋势来推测股价趋势。OBV以“N”字型为波动单位，并且许许多多“N”型波构成了OBV的曲线图，我们对一浪高于一浪的“N”型波，称其为“上升潮”（UPTIDE），至于上升潮中的下跌回落则称为“跌潮”（DOWNFIELD）。</p>
+                                        <h6>二、OBV指标的使用方法</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> OBV线下降，股价上升，表示买盘无力为卖出信号</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> OBV线上升，股价下降时，表示有买盘逢低介入，为买进信号</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 当OBV横向走平超过三个月时，需注意随时有大行情出现</p>
+                                        <h6>三、OBV指标的使用心得</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 当OBV出现超过一个月以上，大致上接近于水平的横向移动是，代表市场正处于盘整期，大部分没有耐心的投资者已经纷纷离场，此时正是暴风雨前的宁静，大行情随时都有可能发生。</p>
+                                        <h6>四、OBV指标的计算公式</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; OBV的计算公式很简单，首先我们假设已经知道了上一个交易日的OBV，就可以根据今天的成效量以及今天的收盘价与上一个交易日的收盘价的比较计算出今天的OBV。用数学公式表示如下</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 今日OBV = 昨日OBV + sgn*今日的成交量</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 其中sgn是符号的意思，sgn可能是+1，也可能是-1，这由下式决定。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; Sgn = +1  今天收盘价≥昨天收盘价</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; Sgn = -1  今天收盘价＜昨天收盘价</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 成交量指的是成交股票的手数，不是成交金额。</p>
+                                    </div>
+                                    <div class="tab-pane p-3" id="6" role="tabpanel">
+                                        <h4>BRAR</h4> 
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 情绪指标(BRAR)也称为人气意愿指标，其英文缩写亦可表示为ARBR。由人气指标(AR)和意愿指标(BR)两个指标构成。AR指标和BR指标都是以分析历史股价为手段的技术指标。</p>
+                                        <h6>一、BRAR指标的用途</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 分为BR指标，AR指标，前者为买卖意愿指标，后者为买卖气势指标，AR可单独使用，BR必须与AR并用。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; BR是一种“情绪指标”就是以“反市场心理”的立场为基础，当众人一窝蜂的买股票，前途似乎一片光明，此时，你应该断然离开市场。相反地，当群众已经对行情失望，市场一片看坏的声浪时，你应该毅然决然的进场默默承接。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; AR是一种“潜在功能”。由于开盘价乃是股民经一夜冷静思考后，共同默契的一个合理价格，那么，从开盘价向上推升至当日最高价之间，每超越一个价位都会损耗一分能量。当AR值升高至一定限度时，代表能量已经消耗殆尽，缺乏推升力道的股价，很快的就会面临翻转危机。相反地，股价从开盘以后并未向上冲高，自然就减少能量的损耗，相对的也就囤积保存了许多基类能量，这一股无形的潜能，随时都有可能在适当成熟的实际爆发出来。</p>
+                                        <h6>二、BRAR指标的使用方法</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> BR介于70-150间属于盘整行情</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> BR高于400时，需注意股价可能回档</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> BR低于50时，需注意股价可能反弹</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> AR、BR急速上升，意味距股价高峰已近，可获利了结</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> BR值低于AR值时，可逢低买进</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> BR急速上升，热AR盘整或小回时，应逢高出货</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> BR由高档下降一半，此时选择股价回档买进，成功率可以高达95%</p>
+                                        <h6>三、BRAR指标的使用心得</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 当BR由高档下降，此时AR位于40左右的低水平，持续囤积能量，而BR由上而下缓慢的接受AR，几乎达到碰撞的阶段，或且略低于AR时，为千载难逢的买进时机，又称为最佳的狙击买点。这个讯号，一年难得遇到一次</p>
+                                        <h6>四、BRAR指标的计算公式</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> BR计算公式</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; i.多头力道强度 = 今天最高价 - 昨天收盘价</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; ii.空头力道强度 = 昨天收盘价 – 今天最低价  </p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp;如果i和ii≤0，则一律记录成0</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; iii.多头总强度 = 26天的多头力道总和</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; iv.空头总强度= 26天的空头力道总和</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp;BR = (iii/iv)*100</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp;注：BR一旦超过300以上持续上升，则其数据会以三级跳的方式前进，此为其计算公式的特征</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> AR计算公式</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; i.向上推力 = 今天最高价 – 今天开盘价</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; ii.向下重力 = 今天开盘价 -  今天最低价</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; iii.推力和 = 26天的向上推力总和</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; iv.重力和 = 26天的向下重力总和</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; v.AR  =  (iii/iv)*100</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp;注：除权除息不影响AR的计算数据，所以不需要做调整</p>
+
+                                    </div>
+                                    <div class="tab-pane p-3" id="7" role="tabpanel">
+                                        <h4>CCI</h4>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 顺势指标又叫CCI指标，CCI指标是美国股市技术分析 家唐纳德·蓝伯特(Donald Lambert)于20世纪80年代提出的，专门测量股价、外汇或者贵金属交易是否已超出常态分布范围。属于超买超卖类指标中较特殊的一种。波动于正无穷大和负无穷大之间。但是，又不需要以0为中轴线，这一点也和波动于正无穷大和负无穷大的指标不同。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 它最早是用于期货市场的判断，后运用于股票市场的研判，并被广泛使用。与大多数单一利用股票的收盘价、开盘价、最高价或最低价而发明出的各种技术分析指标不同，CCI指标是根据统计学原理，引进价格与固定期间的股价平均区间的偏离程度的概念，强调股价平均绝对偏差在股市技术分析中的重要性，是一种比较独特的技术指标。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 它与其他超买超卖型指标又有自己比较独特之处。像KDJ、W%R等大多数超买超卖型指标都有"0-100"上下界限，因此，它们对待一般常态行情的研判比较适用，而对于那些短期内暴涨暴跌的股票的价格走势时，就可能会发生指标钝化的现象。而CCI指标却是波动于正无穷大到负无穷大之间，因此不会出现指标钝化现象，这样就有利于投资者更好地研判行情，特别是那些短期内暴涨暴跌的非常态行情。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 与MACD、RSI、KDJ等指标一样，CCI也是技术分析最常见的参考指标之一。</p>
+                                        <h6>一、CCI指标的用途</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 该指标用来测量股价脱离正常价格范围的变异性，正常波动范围在±100之间。属于超买超卖类指标中较特殊的一种，是专门对付极端行情的。在一般常态行情下，CCI指标不会发生作用，当CCI扫描到异常股价波动时，力求速战速决，胜负瞬间立即分晓，赌输了也必须立刻加速逃逸！</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 注意！CCI的“天线”是+100，“地线”是-100，这个范围也有可能因为个股股性改变而稍有变动，但是，大体上不会差异太大</p>
+                                        <h6>二、CCI指标的使用方法</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> CCI从+100—-100的常态区，由下往上突破+100天线时，为抢进时机</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> CCI从+100天线之上，由上往下跌天线时，为加速逃逸时机</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> CI从+100—-100的常态区，由上往下跌破-100地线时，为打落水狗的放空卖出时机</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> CI从-100下方，由下往上突破-100地线时，打落水狗的空头，应尽快回补买进股票</p>
+                                        <h6>三、CCI指标的使用心得</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> CCI向下跌破-100地线时，在中国股市无法从事“融券放空”的卖出。但如果当CCI波动在常态范围时，你已经参考其他指标的讯号而买进股票的话，此时可以把它当成卖出讯号而抛出持股。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> CCI从-100地线下方，由下往上突破地线时，在中国股市无法从事“融券回补”的买进，但我们可以把他当成短线买进讯号。</p>
+                                        <h6>四、CCI指标的计算公式</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 计算TP</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; TP = (最高价+最低价+收盘价)/3</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 计算MA</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; MA = 近N日收盘价的累计之和/N</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 计算MD</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; MD = 近N日(MA-收盘价)累计和</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> N日CCI</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; CCI = (TP - MA)/(0.015*MD)</p>
+                                    </div>
+                                    <div class="tab-pane p-3" id="8" role="tabpanel">
+                                        <h4>PSY</h4>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 心理线(PSY)指标是研究投资者对股市涨跌产生心理波动的情绪指标。它对股市短期走势的研判具有一定的参考意义。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 心理线(PSY)指标将一定时期内投资者趋向买方或卖方的心理事实转化为数值，从而判断股价的未来趋势。</p>
+                                        <h6>一、PSY指标的用途</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 心理线(PSY)指标将一定时期内投资者趋向买方或卖方的心理事实转化为数值，从而判断股价的未来趋势。</p>
+                                        <h6>二、PSY指标的使用方法</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 一段下跌(上升)行情展开前，超买(超卖)的最高(低)点通常会出现两次。在出现第二次超买(超卖)的最高(低)点时，一般是卖出(买进)时机。由于PSY指标具有这种高点密集出现的特性，可给投资者带来充裕时间进行研判与介入。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> PSY指标在25~75之间为常态分布。PSY指标主要反映市场心理的超买超卖，因此，当心理线指标在常态区域内上下移动时，一般应持观望态度。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> PSY指标超过75或低于25时，表明股价开始步入超买区或超卖区,此时需要留心其动向。当PSY指标百分比值超过83或低于17时，表明市场出现超买区或超卖区，价位回跌或回升的机会增加，投资者应该准备卖出或买进，不必在意是否出现第二次信号。这种情况在个股中比较多见。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 当PSY指标百分比值&lt;10，是极度超卖。抢反弹的机会相对提高，此时为短期较佳的买进时机;反之，如果PSY指标百分比值&gt;90，是极度超买。此时为短期卖出的有利时机。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 当PSY曲线和PSYMA曲线同时向上运行时，为买入时机;相反，当PSY曲线与PSYMA曲线同时向下运行时，为卖出时机。而当PSY曲线向上突破PSYMA曲线时，为买入时机;相反，当PSY曲线向下跌破PSYMA曲线后，为卖出时机。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 当PSY曲线向上突破PSYMA曲线后，开始向下回调至PSYMA曲线，只要PSY曲线未能跌破PSYMA曲线，都表明股价属于强势整理。一旦PSY曲线再度返身向上时，为买入时机;当PSY曲线和PSYMA曲线同时向上运行一段时间后，PSY曲线远离PSYMA曲线时，一旦PSY曲线掉头向下，说明股价上涨的动能消耗较大，为卖出时机。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 当PSY曲线和PSYMA曲线再度同时向上延伸时，投资者应持股待涨;当PSY曲线在PSYMA曲线下方运行时，投资者应持币观望。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 当PSY曲线和PSYMA曲线始终交织在一起，于一个波动幅度不大的空间内运动时，预示着股价处于盘整的格局中，投资者应以观望为主。</p>
+                                        <h6>三、PSY指标的使用心得</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 当股价经过了一段较长时间的中低位盘整后,带量上行时,如果72日PSY曲线也开始向上突破50（线或数值、下同）,就意味着市场上人气比较活跃,多头力量开始增强,这是PSY指标发出的买入信号。此时,投资者可以中短线买入股票。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 当股价在高位盘整时,一旦股价掉头向下,同时72日PSY曲线也开始向下跌破50,就意味着市场上人气开始涣散,多头力量开始减弱,这是PSY指标发出的卖出信号。此时,投资者应及时逢高卖出股票。</p>
+                                        <h6>四、PSY指标的计算公式</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> PSY=(N日内上涨天数/N)*100</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> PSYMA=PSY的M日简单移动平均</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 参数N设置为12日，参数M设置为6日</p>
+                                    </div>
+                                    <div class="tab-pane p-3" id="9" role="tabpanel">
+                                        <h4>BOLL</h4>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 布林线(Boll)指标是股市技术分析的常用工具之一，通过计算股价的"标准差"，再求股价的"信赖区间"。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 该指标在图形上画出三条线，其中上下两条线可以分别看成是股价的压力线和支撑线，而在两条线之间还有一条股价平均线，布林线指标的参数最好设为20。一般来说，股价会运行在压力线和支撑线所形成的通道中。</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 与MACD、RSI、KDJ等指标一样，BOLL指标也是股票市场最实用的技术分析参考指标。</p>
+                                        <h6>一、BOLL指标的用途</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; BOLL指标利用波带显示其安全的高低价位。股价游走在“上限”和“下限”的带状区间内，当股价涨跌幅度加大时，带状区会变宽，涨跌幅度缩小时，带状区会变窄</p>
+                                        <h6>二、BOLL指标的使用方法</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 向上穿越“上限”时，将形成短期回档，为短线的卖出时机</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 股价向下穿越“下限”是，将形成短期反弹，为短线的买进时机</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 当布林线的带状区呈水平方向移动时，可以视为处于“常态范围”，此时，采用1、2两个使用方法，可靠度相当高。如果，带状区朝右上方或右下方移动时，则属于脱离常态，另外有特别的意义存在。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 波带变窄时，激烈的价格波动有可能随时产生</p>
+                                        <h6>三、BOLL指标的使用心得</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 股价经历一段激烈的波动之后，会逐渐的趋于平静，多空两方面的股民重新思考、整理、角力，在双方都处于犹豫不决的情绪时，股价的波动越来越沉闷，促使布林线的“上限”和“下限”越来越靠近，越来越狭窄，这种情形是“暴风雨前的宁静”，小心！股价就要刮大风、起大浪</p>
+                                        <h6>四、BOLL指标的计算公式</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 中轨线=N日的移动平均线</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 上轨线=中轨线+两倍的标准差</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 下轨线=中轨线-两倍的标准差</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 日BOLL指标的计算过程</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 计算MA</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; MA=N日内的收盘价之和÷N</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 计算标准差MD</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; MD=平方根N日的(C-MA)的两次方之和除以N</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 计算MB、UP、DN线</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; MB=N日的MA</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; UP=MB+2×MD</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; DN=MB-2×MD</p>
+                                        <p class="mx-4 my-0">&nbsp;&nbsp;&nbsp;&nbsp; 各大股票交易软件默认N是20，所以MB等于当日20日均线值</p>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 在股市分析软件中，BOLL指标一共由四条线组成，即上轨线UP 、中轨线MB、下轨线DN和价格线。其中上轨线UP是UP数值的连线，用黄色线表示;中轨线MB是MB数值的连线，用白色线表示;下轨线DN是DN数值的连线，用紫色线表示;价格线是以美国线表示，颜色为浅蓝色。和其他技术指标一样，在实战中，投资者不需要进行BOLL指标的计算，主要是了解BOLL的计算方法和过程，以便更加深入地掌握BOLL指标的实质，为运用指标打下基础。</p>
+                                    </div>
+                                    <div class="tab-pane p-3" id="10" role="tabpanel">
+                                        <h4>DMA</h4>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 平行线差(DMA)指标是利用两条不同期间的平均线，来判断当前买卖能量的大小和未来价格趋势。DMA指标是一种中短期指标。</p>
+                                        <h6>一、DMA指标的用途</h6>
+                                        <p class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp; 该指标由两条基期不同的平均线组成，属于趋向指标的一种，功能与MACD相近。</p>
+                                        <h6>二、DMA指标的使用方法</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 实线向上交叉虚线，买进</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 实线向下交叉虚线，卖出</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 当DMA波峰呈现一浪比一浪低，而股价却不断创新高时，表明指标与股价出现顶背离，股价即将见顶，当DMA波谷呈现一浪比一浪高，而股价却不断创新低时，表明指标与股价出现底背离，股价即将见底。</p>
+                                        <h6>三、DMA指标的使用心得</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> DMA指标中存在正数和负数的区别,一般情况下,正数表示多头市场的运行情况,负数表示空头市场的运行情况,所以投资者在使用DMA指标的时候需要考虑市场的多头空头方向以及时间。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> DMA指标有盘绕的现象,也就是DMA指标和AMA指标呈现上下盘绕的行情姿势,而这也表示目前市场正处于震荡整理的局势,此时DMA指标的方向指引性较弱。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> DMA指标是有DMA线和AMA线组成,而DMA线和AMA线也存在"死亡交叉"和"黄金交叉"的效应,也就是当DMA线向下穿破AMA线,则呈现"死亡交叉"效应;当DMA线向上穿破AMA线,则呈现"黄金交叉"效应。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> DMA指标存在零轴点应用规则.也就是当数值越过零轴之后,环球金汇表示不管其方向是正还是负,都会延续一个趋势,而这很容易在多头和空头转变的时候呈现出来。</p>
+                                        <h6>四、DMA指标的计算公式</h6>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> DMA=（10天平均值—50天平均值），此值在图表上画成实线。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> AMA=DMA/10，此值在图表上画成虚线。</p>
+                                        <p class="mx-4 mt-2 my-0">&nbsp;&nbsp;&nbsp;&nbsp;<i class="typcn typcn-media-record"></i> 公式一律是短天期减长天期值，可以以倍数更改原始设定值。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- end Col-9 -->
+
+                </div>
+
+            </div>
+            <!-- End row -->
+
+        </div>
+        <!-- end container-fluid -->
+    </div>
+    <!-- end wrapper -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        Copyright &copy; HTM GROUP name All rights reserved.
+    </footer>
+
+    <!-- End Footer -->
+
+    <!-- jQuery  -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/jquery.slimscroll.js"></script>
+    <script src="static/js/waves.min.js"></script>
+
+    <script src="static/js/bootstrap-datepicker.min.js"></script>
+  
+    <!-- App js -->
+    <script src="static/js/app.js"></script>
+
+    <script>
+        //选项卡
+        $('#tit li').click(function() {
+            var i = $(this).index(); //下标第一种写法
+            //var i = $('tit').index(this);//下标第二种写法
+            $(this).addClass('active').siblings().removeClass('active');
+            $('#con div').eq(i).show().siblings().hide();
+        });
+
+        // 获取 被访问时的 url
+        var ur = location.href;
+        // 获取该url  = 后面的数字 （id）
+        var type = ur.split('?')[1].split("=")[1];
+
+        // 使用传过来的 数字 （id） 来控制该选项卡的切换
+        // 其实就是从页面 A 通过 URL ？ 后面的参数 给页面B 传一个 index
+
+        $('#tit li').eq(type - 1).addClass('active').siblings().removeClass('active');
+        $('#con div').eq(type - 1).show().siblings().hide();
+    </script>
+
+
+</body>
+
+</html>

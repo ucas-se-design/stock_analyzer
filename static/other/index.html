@@ -1,0 +1,573 @@
+<html>
+
+<head>
+    {% load static %}
+    <script src="{% static 'js/echarts.js' %}"></script>
+</head>
+
+<body>
+    <h1>
+        HELLO
+    </h1>
+
+    <div id="macd" style="height:300px;"></div>
+    <div id="rsi" style="height:300px;"></div>
+    <div id="kdj" style="height:300px;"></div>
+    <div id="boll" style="height:300px;"></div>
+    <div id="dma" style="height:300px;"></div>
+    <div id="brar" style="height:300px;"></div>
+    <div id="cci" style="height:300px;"></div>
+    <div id="obv" style="height:300px;"></div>
+    <div id="psy" style="height:300px;"></div>
+    <div id="vr" style="height:300px;"></div>
+    <script type="text/javascript">
+        var stockCode = {{ stockCode | safe}}
+        var dataList = {{ dataList | safe}}
+        var dateList = {{ dateList | safe}}
+        // 基于准备好的dom，初始化echarts实例
+        var macdChart = echarts.init(document.getElementById("macd"));
+        var rsiChart = echarts.init(document.getElementById("rsi"));
+        var kdjChart = echarts.init(document.getElementById("kdj"));
+        var bollChart = echarts.init(document.getElementById("boll"));
+        var dmaChart = echarts.init(document.getElementById("dma"));
+        var brarChart = echarts.init(document.getElementById("brar"));
+        var cciChart = echarts.init(document.getElementById("cci"));
+        var obvChart = echarts.init(document.getElementById("obv"));
+        var psyChart = echarts.init(document.getElementById("psy"));
+        var vrChart = echarts.init(document.getElementById("vr"));
+        // 指定图表的配置项和数据
+        var macdOption = {
+            title: {
+                text: "MACD",
+                x: "center"
+            },
+            tooltip: {
+                trigger: "axis"
+            },
+            legend: {
+                data: ['DIF', 'DEA'],
+                x: 'right',
+                y: 15
+            },
+            dataZoom: [
+                {
+                    show: true,
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                },
+                {
+                    type: 'inside',
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                }
+            ],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                axisLine: { onZero: true },
+                data: dateList
+            },
+            yAxis: {
+                name: '',
+                type: 'value',
+            },
+            series: [
+                {
+                    name: 'DIF',
+                    type: 'line',
+                    data: dataList['MACD'][0]
+                },
+                {
+                    name: 'DEA',
+                    type: 'line',
+                    data: dataList['MACD'][1]
+                },
+            ]
+        };
+        var rsiOption = {
+            title: {
+                text: "RSI",
+                x: "center"
+            },
+            tooltip: {
+                trigger: "axis"
+            },
+            legend: {
+                data: ['RSI'],
+                x: 'right',
+                y: 15
+            },
+            dataZoom: [
+                {
+                    show: true,
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                },
+                {
+                    type: 'inside',
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                }
+            ],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                axisLine: { onZero: true },
+                data: dateList
+            },
+            yAxis: {
+                name: '',
+                type: 'value',
+            },
+            series: [
+                {
+                    name: 'RSI',
+                    type: 'line',
+                    data: dataList['RSI'][0]
+                },
+            ]
+        };
+        var kdjOption = {
+            title: {
+                text: "KDJ",
+                x: "center"
+            },
+            tooltip: {
+                trigger: "axis"
+            },
+            legend: {
+                data: ['K', 'D', 'J'],
+                x: 'right',
+                y: 15
+            },
+            dataZoom: [
+                {
+                    show: true,
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                },
+                {
+                    type: 'inside',
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                }
+            ],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                axisLine: { onZero: true },
+                data: dateList
+            },
+            yAxis: {
+                name: '',
+                type: 'value',
+            },
+            series: [
+                {
+                    name: 'K',
+                    type: 'line',
+                    color: 'darkred',
+                    data: dataList['KDJ'][0],
+                },
+                {
+                    name: 'D',
+                    type: 'line',
+                    color: 'green',
+                    data: dataList['KDJ'][1]
+                },
+                {
+                    name: 'J',
+                    type: 'line',
+                    color: 'darkblue',
+                    data: dataList['KDJ'][2]
+                }
+            ]
+        };
+        var bollOption = {
+            title: {
+                text: "BOLL",
+                x: "center"
+            },
+            tooltip: {
+                trigger: "axis"
+            },
+            legend: {
+                data: ['SMA', '阻力线', '支撑线'],
+                x: 'right',
+                y: 15
+            },
+            dataZoom: [
+                {
+                    show: true,
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                },
+                {
+                    type: 'inside',
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                }
+            ],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                axisLine: { onZero: true },
+                data: dateList
+            },
+            yAxis: {
+                name: '',
+                type: 'value',
+            },
+            series: [
+                {
+                    name: 'SMA',
+                    type: 'line',
+                    color: 'darkblue',
+                    data: dataList['BOLL'][0],
+                },
+                {
+                    name: '阻力线',
+                    type: 'line',
+                    color: 'darkred',
+                    data: dataList['BOLL'][1]
+                },
+                {
+                    name: '支撑线',
+                    type: 'line',
+                    color: 'green',
+                    data: dataList['BOLL'][2]
+                }
+            ]
+        };
+        var dmaOption = {
+            title: {
+                text: "DMA",
+                x: "center"
+            },
+            tooltip: {
+                trigger: "axis"
+            },
+            legend: {
+                data: ['DMA', 'AMA'],
+                x: 'right',
+                y: 15
+            },
+            dataZoom: [
+                {
+                    show: true,
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                },
+                {
+                    type: 'inside',
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                }
+            ],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                axisLine: { onZero: true },
+                data: dateList
+            },
+            yAxis: {
+                name: '',
+                type: 'value',
+            },
+            series: [
+                {
+                    name: 'DMA',
+                    type: 'line',
+                    color: 'darkblue',
+                    data: dataList['DMA'][0],
+                },
+                {
+                    name: 'AMA',
+                    type: 'line',
+                    color: 'darkred',
+                    data: dataList['DMA'][1]
+                },
+            ]
+        };
+        var brarOption = {
+            title: {
+                text: "BRAR",
+                x: "center"
+            },
+            tooltip: {
+                trigger: "axis"
+            },
+            legend: {
+                data: ['AR', 'BR'],
+                x: 'right',
+                y: 15
+            },
+            dataZoom: [
+                {
+                    show: true,
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                },
+                {
+                    type: 'inside',
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                }
+            ],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                axisLine: { onZero: true },
+                data: dateList
+            },
+            yAxis: {
+                name: '',
+                type: 'value',
+            },
+            series: [
+                {
+                    name: 'AR',
+                    type: 'line',
+                    color: 'darkblue',
+                    data: dataList['BRAR'][0],
+                },
+                {
+                    name: 'BR',
+                    type: 'line',
+                    color: 'darkred',
+                    data: dataList['BRAR'][1],
+                },
+            ]
+        };
+        var cciOption = {
+            title: {
+                text: "CCI",
+                x: "center"
+            },
+            tooltip: {
+                trigger: "axis"
+            },
+            legend: {
+                data: ['CCI'],
+                x: 'right',
+                y: 15
+            },
+            dataZoom: [
+                {
+                    show: true,
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                },
+                {
+                    type: 'inside',
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                }
+            ],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                axisLine: { onZero: true },
+                data: dateList
+            },
+            yAxis: {
+                name: '',
+                type: 'value',
+            },
+            series: [
+                {
+                    name: 'CCI',
+                    type: 'line',
+                    color: 'darkblue',
+                    data: dataList['CCI'][0],
+                },
+            ]
+        };
+        var obvOption = {
+            title: {
+                text: "OBV",
+                x: "center"
+            },
+            tooltip: {
+                trigger: "axis"
+            },
+            legend: {
+                data: ['OBV'],
+                x: 'right',
+                y: 15
+            },
+            dataZoom: [
+                {
+                    show: true,
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                },
+                {
+                    type: 'inside',
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                }
+            ],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                axisLine: { onZero: true },
+                data: dateList
+            },
+            yAxis: {
+                name: '',
+                type: 'value',
+            },
+            series: [
+                {
+                    name: 'OBV',
+                    type: 'line',
+                    color: 'darkblue',
+                    data: dataList['OBV'][0],
+                },
+            ]
+        };
+        var psyOption = {
+            title: {
+                text: "PSY",
+                x: "center"
+            },
+            tooltip: {
+                trigger: "axis"
+            },
+            legend: {
+                data: ['PSY'],
+                x: 'right',
+                y: 15
+            },
+            dataZoom: [
+                {
+                    show: true,
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                },
+                {
+                    type: 'inside',
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                }
+            ],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                axisLine: { onZero: true },
+                data: dateList
+            },
+            yAxis: {
+                name: '',
+                type: 'value',
+            },
+            series: [
+                {
+                    name: 'PSY',
+                    type: 'line',
+                    color: 'darkblue',
+                    data: dataList['PSY'][0],
+                },
+            ]
+        };
+        var vrOption = {
+            title: {
+                text: "VR",
+                x: "center"
+            },
+            tooltip: {
+                trigger: "axis"
+            },
+            legend: {
+                data: ['VR'],
+                x: 'right',
+                y: 15
+            },
+            dataZoom: [
+                {
+                    show: true,
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                },
+                {
+                    type: 'inside',
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0]
+                }
+            ],
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                axisLine: { onZero: true },
+                data: dateList
+            },
+            yAxis: {
+                name: '',
+                type: 'value',
+            },
+            series: [
+                {
+                    name: 'VR',
+                    type: 'line',
+                    color: 'darkblue',
+                    data: dataList['VR'][0],
+                },
+            ]
+        };
+
+        macdChart.setOption(macdOption);
+        rsiChart.setOption(rsiOption);
+        kdjChart.setOption(kdjOption);
+        bollChart.setOption(bollOption);
+        dmaChart.setOption(dmaOption);
+        brarChart.setOption(brarOption);
+        cciChart.setOption(cciOption);
+        obvChart.setOption(obvOption);
+        psyChart.setOption(psyOption);
+        vrChart.setOption(vrOption);
+        // 建立连接
+        echarts.connect([macdChart, rsiChart, kdjChart, bollChart, dmaChart, brarChart, cciChart, obvChart, psyChart, vrChart]);
+    </script>
+</body>
+</html>
