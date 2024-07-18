@@ -21,10 +21,10 @@ from tkinter.messagebox import *
 # 配置数据库连接参数
 config = {
     'user': 'root',
-    'password': '001015wq.',
+    'password': '123456',
     'host': '127.0.0.1',
-    'database': 'user_and_password',
-    'charset': 'utf8mb4',
+    'database': 'stock_forecast',
+    # 'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor,
 }
 
@@ -40,53 +40,45 @@ def more2(request):
 def more3(request):
     return render(request,'tables-responsive3.html')
 
+def service_agreement(request):
+    return render(request, 'service_agreement.html')
 def home_page(request):
-    return render(request,'initial.html')
+    return render(request,'home_page.html')
 
 def login(request):
-    return render(request,'pages-login.html')
+    return render(request,'login.html')
 
 def register(request):
-    return render(request,'pages-register.html')
+    return render(request,'register.html')
 
 def message(request):
     return render(request,'message.html')
 
-def recoverpw(request):
-    return render(request,'pages-recoverpw.html')
+def forget_password(request):
+    return render(request,'forget_password.html')
 
 def start_login(request):
     web_message = request.GET
-    temp_username = web_message.get('username')
-    temp_password = web_message.get('password')
+    username = web_message.get('username')
+    password = web_message.get('password')
 
     try:
         connection = pymysql.connect(**config)
-        print("Successfully connected to MySQL!")
         with connection.cursor() as cursor:
-            # 创建命令
-            query_sql = "SELECT * FROM users;"
-            # 执行命令
+            query_sql = "SELECT * FROM user;"
             cursor.execute(query_sql)
-            # 获得命令结果
             result = cursor.fetchall()
-            # result是一个字典列表，每个元素是一个字典，键为列名，值为元素
             for dict_item in result:
-                if dict_item['username'] != temp_username:
+                if dict_item['username'] != username:
                     continue
                 else:
-                    if dict_item['password'] != temp_password:
-                        return render(request,'pwerror.html')
+                    if dict_item['password'] != password:
+                        return render(request,'password_error.html')
                     else:
-                        print("Successfully login!")
                         return index1(request)
             return render(request,'user_not_exist.html')
 
     except pymysql.Error as e:
-        print(f"Error:{e}")
-        ############
-        #需要写一个页面mysql_error.html来表示连接数据库失败或其他错误
-        ############
         return render(request,'mysql_error.html')
     finally:
         if 'connection' in locals():
@@ -94,44 +86,68 @@ def start_login(request):
 
 def start_register(request):
     web_message = request.GET
-    temp_username = web_message.get('username')
-    temp_password1 = web_message.get('password1')
-    temp_password2 = web_message.get('password2')
-    temp_email = web_message.get('email')
-    '''
-    一些已经做好的页面
-        |——'username_is_too_long.html'
-        |——'password_is_too_short.html'
-        |——'password_is_too_long.html'
-        |——'please_input_right_email.html'
-        |——'password_is_not_same.html'
-        |——'username_is_repeated.html'
-        |——'register_is_succeed.html'
-    '''
-    #################
-    #根据用户输入的用户名、密码、重复密码和邮箱来注册用户
-    #仿照start_login函数，使用上述页面实现用户注册业务
-    #################
-    return
+    username = web_message.get('username')
+    password1 = web_message.get('password1')
+    password2 = web_message.get('password2')
+    email = web_message.get('email')
+    if len(username) >= 10:
+        return render(request, 'username_is_too_long.html')
+    import re
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    if re.match(pattern, email) is None:  # 如果不是标准的邮箱格式
+        return render(request, 'please_input_right_email.html')
+    if password1 == password2:
+        pattern = r'^[A-Za-z0-9_\W]*$'
+        if re.match(pattern, password1) is None:  # 如果密码格式不合法
+            return render(request, 'password_is_illegal.html')
+        if len(password1) < 6:
+            return render(request, 'password_is_too_short.html')
+        if len(password1) > 16:
+            return render(request, 'password_is_too_long.html')
+    else:
+        return render(request, 'password_is_not_same.html')
+    connection = pymysql.connect(**config)
+    with connection.cursor() as cursor:
+        query_sql = "INSERT INTO user(`username`, `password`, `email`) VALUES('" + username + "', '" + password1 + "', '" + email + "');"
+        print(query_sql)
+        try:
+            cursor.execute(query_sql)
+            connection.commit()
+            connection.close()
+        except:
+            return render(request, 'username_is_repeated.html')
+    return render(request, 'register_is_succeed.html')
 
     
 def recover(request):
     web_message = request.GET
-    temp_username = web_message.get('username')
-    temp_email = web_message.get('email')
-    temp_password = web_message.get('password')
-    '''
-    一些做好的页面：
-        |——'register_user_not_exist.html'
-        |——'email_is_not_right.html'
-        |——'password_is_changed.html'
-    '''
-    #################
-    #根据用户输入的用户名、邮箱和密码来修改用户修改密码
-    #仿照start_login函数，使用上述页面实现用户修改密码业务
-    #################
-    
-    pass
+    username = web_message.get('username')
+    email = web_message.get('email')
+    password = web_message.get('password')
+    try:
+        connection = pymysql.connect(**config)
+        with connection.cursor() as cursor:
+            query_sql = "SELECT * FROM user;"
+            cursor.execute(query_sql)
+            result = cursor.fetchall()
+            for dict_item in result:
+                if dict_item['username'] != username:
+                    continue
+                else:
+                    if dict_item['email'] != email:
+                        return render(request, 'email_is_not_right.html')
+                    else:
+                        query_sql = "UPDATE user SET `password` = '" + password + "' WHERE (`username` = '" + username + "');"
+                        print(query_sql)
+                        cursor.execute(query_sql)
+                        connection.commit()
+                        connection.close()
+                        return render(request, 'password_is_changed.html')
+            return render(request, 'register_user_not_exist.html')
+
+    except pymysql.Error as e:
+        print(e)
+        return render(request, 'mysql_error.html')
 
 def get_result():
     serverName = '127.0.0.1'
@@ -149,10 +165,10 @@ def get_result():
     return returnData.decode('utf-8')
 
 def main_page(request):
-    #打开js文件，准备对配置项进行修改
+    # 打开js文件，准备对配置项进行修改
     kline_data = []
     
-    with open('C:\\Users\\sun\\Desktop\\testmd\\my_site\\static\\js\\test.js',"w") as f:
+    with open('static\\js\\test.js', "w") as f:
         date = ""
         op = 0
         cp = 0
@@ -207,14 +223,14 @@ def main_page(request):
         f.writelines('}}\n')
         f.writelines("kline.setOption(reset);")
     
-    with open('C:\\Users\\sun\\Desktop\\testmd\\my_site\\static\\js\\result.js',"w") as result_file:
+    with open('static\\js\\result.js', "w") as result_file:
         data = get_result()
         result = ''
         for i in data:
             result += i
         result_file.writelines("data_to_show = " + result) 
         
-    return main_page1(request)
+    return render(request,'main_page.html')
     
 def main_page1(request):
     return render(request,'main_page.html')
@@ -228,7 +244,9 @@ def index1(request):
         dateList = json.load(file_obj)
     for name in nameList:
         filename = 'static/json/' + stockCode + '_' + name + '.json'
+        # print(filename)
         with open(filename) as file_obj:
+            # print('Yes')
             dataList[name] = json.load(file_obj)
     return render(request, 'index1.html',
                   {
@@ -236,7 +254,6 @@ def index1(request):
                       'dateList': json.dumps(dateList),
                       'dataList': json.dumps(dataList),
                   })
-   # return render(request,'index1.html')
 
 def index2(request):
     stockCode = "000005"
@@ -273,4 +290,3 @@ def index3(request):
                       'dateList': json.dumps(dateList),
                       'dataList': json.dumps(dataList),
                   })
-
