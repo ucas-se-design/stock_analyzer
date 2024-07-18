@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务协议</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+            border-left: 4px solid #4CAF50;
+            padding-left: 10px;
+            margin-top: 20px;
+        }
+        p {
+            margin: 10px 0;
+            color: #555;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .btn {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>服务协议</h1>
+        <h2>1. 概述</h2>
+        <p>欢迎使用我们的服务。本协议详细列出了使用本服务的条款和条件。在注册之前，请仔细阅读本协议。</p>
+        <p>本协议适用于所有访问和使用本服务的用户，包括但不限于注册用户和非注册用户。通过访问或使用本服务，即表示您同意受本协议条款的约束。如果您不同意这些条款，请不要使用本服务。</p>
+
+        <h2>2. 用户义务</h2>
+        <p>用户在使用本服务时，应遵守所有适用的法律法规，不得利用本服务进行任何违法活动。</p>
+        <p>用户同意不进行以下行为：</p>
+        <ul>
+            <li>发布任何违反法律法规、侵犯他人权利或不雅的内容。</li>
+            <li>未经授权访问或试图访问其他用户的账户、计算机系统或网络。</li>
+            <li>传输任何包含病毒、木马或其他有害代码的内容。</li>
+            <li>干扰或中断本服务或连接至本服务的服务器和网络。</li>
+            <li>收集或存储其他用户的个人信息，除非获得明确同意。</li>
+        </ul>
+
+        <h2>3. 服务内容</h2>
+        <p>我们将尽力提供优质的服务，但不对因任何原因导致的服务中断或数据丢失负责。</p>
+        <p>我们的服务内容包括但不限于以下内容：</p>
+        <ul>
+            <li>提供用户交流和互动的平台。</li>
+            <li>提供信息发布和浏览服务。</li>
+            <li>提供其他我们认为对用户有帮助的服务。</li>
+        </ul>
+        <p>我们保留在任何时间修改、暂停或终止本服务的权利，无需事先通知。</p>
+
+        <h2>4. 隐私保护</h2>
+        <p>我们重视用户的隐私保护，并会采取合理的措施保护用户的个人信息。</p>
+        <p>我们承诺不会将用户的个人信息出售或出租给第三方，除非获得用户的明确同意或法律要求。</p>
+        <p>我们会采取技术和管理措施来保护用户的个人信息，但不能保证绝对的安全。用户应自行承担因信息泄露可能带来的风险。</p>
+
+        <h2>5. 免责条款</h2>
+        <p>在法律允许的范围内，我们不对因使用本服务而产生的任何间接、附带、特殊、惩罚性或后果性的损害赔偿负责。</p>
+        <p>我们不保证本服务不间断、无错误或完全安全。用户理解并同意，任何通过本服务下载或获取的资料由用户自行决定并承担风险。</p>
+
+        <h2>6. 协议修改</h2>
+        <p>我们保留在任何时间修改本协议的权利，修改后的协议将在本页面上发布。</p>
+        <p>修改后的协议一经发布即自动生效。继续使用本服务即表示用户接受修改后的协议。如果用户不同意修改后的协议，应立即停止使用本服务。</p>
+
+        <h2>7. 终止条款</h2>
+        <p>我们有权在用户违反本协议条款的情况下终止其使用本服务的权利。</p>
+        <p>用户可以随时停止使用本服务。如果用户希望注销账户，应通过指定的渠道联系我们。</p>
+        <p>终止后，用户使用本服务的权利立即终止，但本协议中关于责任、赔偿和适用法律的条款将继续有效。</p>
+
+        <a href="register.html" class="btn" id="agreeBtn">我同意</a>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("agreeBtn").addEventListener("click", function(event){
+                event.preventDefault();
+                window.location.href = "register.html"; // 替换成实际的注册页面URL
+            });
+        });
+    </script>
+</body>
+</html>
